@@ -25,7 +25,7 @@
     slider() {
       if ($(".team-slider").length) {
         new Swiper(".team-slider", {
-          slidesPerView: 3,
+          // slidesPerView: 3,
           spaceBetween: 30,
           loop: true,
           autoplay: {
@@ -36,6 +36,23 @@
             nextEl: ".arrow-next",
             prevEl: ".arrow-prev",
           },
+          breakpoints: {
+            // when window width is >= 320px
+            768: {
+              slidesPerView: 1,
+              // spaceBetween: 30
+            },
+            // when window width is >= 480px
+            1024: {
+              slidesPerView: 2,
+              // spaceBetween: 40
+            },
+            // when window width is >= 640px
+            1280: {
+              slidesPerView: 3,
+              // spaceBetween: 50
+            }
+          }
         });
       }
       if ($(".testimonial-slider-items").length) {
